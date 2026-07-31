@@ -1,0 +1,53 @@
+<?php
+// Place this file at: http://test.local/submit.php
+
+header('Content-Type: text/plain');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Headers: Content-Type');
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo 'ERROR';
+    exit;
+}
+
+$formType = $_POST['form_type'] ?? '';
+
+if ($formType === 'contact') {
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $company = $_POST['company'] ?? '';
+    $businessType = $_POST['business_type'] ?? '';
+    $message = $_POST['message'] ?? '';
+
+    // TODO: Save to database or send email
+    // mail('hello@aureliabrand.com', 'Contact Form', $message);
+
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        echo 'OK';
+    } else {
+        echo 'ERROR';
+    }
+} elseif ($formType === 'career') {
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $position = $_POST['position'] ?? '';
+    $message = $_POST['message'] ?? '';
+
+    // TODO: Save to database or send email
+    // mail('careers@aureliabrand.com', 'Job Application: ' . $position, $message);
+
+    if (!empty($name) && !empty($email) && !empty($phone) && !empty($position)) {
+        echo 'OK';
+    } else {
+        echo 'ERROR';
+    }
+} else {
+    echo 'ERROR';
+}
