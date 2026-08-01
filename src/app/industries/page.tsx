@@ -8,9 +8,9 @@ import { industries } from "@/lib/industries-data";
 import { LeadCTA } from "@/components/sections/LeadCTA";
 
 export const metadata: Metadata = {
-  title: "Industries | Retail Branding Agency",
+  title: "Industries | Retail Branding Promotion",
   description:
-    "Retail branding for fashion, F&B, electronics, supermarkets, specialty stores, and franchise chains across India.",
+    "Promote your brand through retail branding across fashion, FMCG, electronics, healthcare, F&B and more — pan-India in-store campaigns.",
 };
 
 export default function IndustriesPage() {
@@ -18,18 +18,19 @@ export default function IndustriesPage() {
     <PageLayout>
       <main>
         <PageHero
-          label="Industries"
-          title="Retail categories we serve"
-          description="Specialised branding expertise for every type of retail business — tailored strategies that resonate with your target customers."
+          label="Brand Promotion"
+          title="Industries we promote through retail branding"
+          description="We help brands reach shoppers where they buy — with in-store branding campaigns tailored to each retail category."
           image={images.store}
-          imageAlt="Retail industry categories"
+          imageAlt="Retail branding promotion across industries"
         />
 
         <section className="py-24 md:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <SectionHeading
-              label="Our Expertise"
-              title="Branding built for your retail category"
+              label="Industries"
+              title="Promote your brand in the right retail category"
+              description="Every industry needs a different promotion approach — we adapt format, placement and rollout to how your shoppers actually buy."
               align="center"
             />
             <div className="grid md:grid-cols-2 gap-8">

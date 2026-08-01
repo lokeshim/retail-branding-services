@@ -4,9 +4,16 @@ import { formats } from "@/lib/site-content";
 import { AnimatedReveal } from "../ui/AnimatedReveal";
 import { SectionHeading } from "../ui/SectionHeading";
 
-export function FormatsSection() {
+interface FormatsSectionProps {
+  background?: "white" | "surface";
+}
+
+export function FormatsSection({ background = "surface" }: FormatsSectionProps) {
   return (
-    <section id="formats" className="py-24 md:py-32 bg-surface">
+    <section
+      id="formats"
+      className={`py-24 md:py-32 ${background === "white" ? "bg-white" : "bg-surface"}`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeading
           label="Formats"

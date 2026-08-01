@@ -121,12 +121,12 @@ export const storePlanning = [
 ];
 
 export const industries = [
-  { title: "Fashion & Apparel", description: "Elevate brand presence across multi-store retail networks" },
-  { title: "FMCG & Grocery", description: "Drive shelf visibility and in-store engagement at scale" },
-  { title: "Electronics", description: "Create premium showcase environments for product launches" },
-  { title: "Jewellery", description: "Build trust and premium recall in high-value retail" },
-  { title: "Healthcare & Pharma", description: "Spread awareness and drive footfall to clinics and stores" },
-  { title: "F&B & QSR", description: "Create appetite appeal and drive dine-in and takeaway traffic" },
+  { title: "Fashion & Apparel", description: "Promote collections, seasonal drops and store launches across mall and high-street networks" },
+  { title: "FMCG & Grocery", description: "Promote new SKUs, offers and festive campaigns at shelf, aisle and checkout zones" },
+  { title: "Electronics", description: "Promote product launches, exchange offers and EMI campaigns in premium in-store zones" },
+  { title: "Jewellery", description: "Promote festive collections and new launches with high-impact storefront branding" },
+  { title: "Healthcare & Pharma", description: "Promote wellness brands, OTC products and clinic services at retail touchpoints" },
+  { title: "F&B & QSR", description: "Promote menus, limited offers and new outlets with appetite-led in-store branding" },
 ];
 
 export const executionSteps = [

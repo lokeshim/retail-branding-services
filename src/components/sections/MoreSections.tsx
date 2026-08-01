@@ -1,14 +1,14 @@
 import { whyChoose, costItems, storePlanning, industries, executionSteps, caseStudies, mediaComparison, nationalFaqs, blogInsights } from "@/lib/site-content";
-import Image from "next/image";
 import { AnimatedReveal } from "../ui/AnimatedReveal";
 import { SectionHeading } from "../ui/SectionHeading";
 import { BgSection } from "../ui/BgSection";
 import { PricingCTA } from "./HighlightCTAs";
 import { images } from "@/lib/images";
 import Link from "next/link";
-import { ArrowUpRight, Target, Users, MapPin, Layers, Calendar } from "lucide-react";
+import { ArrowUpRight, Target, Users, MapPin, Layers, Calendar, Footprints, IndianRupee, Globe, Clock, Sparkles, Camera, UsersRound, Zap } from "lucide-react";
 
 const planningIcons = [Target, Users, MapPin, Layers, Calendar];
+const whyIcons = [Footprints, IndianRupee, Globe, Clock, Sparkles, Camera, UsersRound, Zap];
 
 export function WhyChoose() {
   return (
@@ -16,48 +16,36 @@ export function WhyChoose() {
       id="why-us"
       image={images.about}
       imageAlt="Why choose retail branding"
-      overlay="brand"
+      overlay="dark"
     >
       <SectionHeading
         label="Why Us"
         title="Why Brands Choose Retail Branding"
+        description="Reach, proof, and rollout discipline — built for retail environments, not generic outdoor media."
         align="center"
         light
       />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-        {whyChoose.map((item, i) => (
-          <AnimatedReveal key={item.title} delay={i * 0.05}>
-            <div className="bg-white/95 backdrop-blur-sm border border-white/20 p-6 h-full shadow-sm">
-              <h3 className="font-serif text-lg font-medium text-foreground mb-2">
-                {item.title}
-              </h3>
-              <p className="text-muted text-sm leading-relaxed">{item.description}</p>
-            </div>
-          </AnimatedReveal>
-        ))}
+
+      <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5 items-stretch">
+        {whyChoose.map((item, i) => {
+          const Icon = whyIcons[i] ?? Sparkles;
+          return (
+            <AnimatedReveal key={item.title} delay={i * 0.05} className="h-full">
+              <div className="bg-white border border-border p-6 h-full flex flex-col shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-surface border border-border flex items-center justify-center mb-4 shrink-0">
+                  <Icon size={18} className="text-foreground" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-serif text-lg font-medium text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed flex-1">
+                  {item.description}
+                </p>
+              </div>
+            </AnimatedReveal>
+          );
+        })}
       </div>
-      <AnimatedReveal delay={0.2}>
-        <div className="relative aspect-[21/9] max-h-72 overflow-hidden border border-white/25 shadow-xl">
-          <Image
-            src={images.store}
-            alt="Retail branding in-store experience"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/40 to-transparent" />
-          <div className="absolute inset-0 flex items-center px-8 md:px-12">
-            <div>
-              <p className="text-white/70 text-xs uppercase tracking-widest mb-2">
-                In-store impact
-              </p>
-              <p className="font-serif text-2xl md:text-3xl text-white max-w-md">
-                Immersive retail. Measurable results.
-              </p>
-            </div>
-          </div>
-        </div>
-      </AnimatedReveal>
     </BgSection>
   );
 }
@@ -153,11 +141,16 @@ export function WhoShouldUse() {
   return (
     <section id="industries" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <SectionHeading label="Industries" title="Who Should Use Retail Branding?" align="center" />
+        <SectionHeading
+          label="Brand Promotion"
+          title="Who we promote through retail branding"
+          description="We plan and execute in-store branding campaigns that put your brand in front of shoppers — across categories that rely on retail visibility and daily footfall."
+          align="center"
+        />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((item, i) => (
             <AnimatedReveal key={item.title} delay={i * 0.06}>
-              <div className="border border-border p-8 hover:border-brand/30 transition-colors">
+              <div className="border border-border p-8 hover:border-brand/30 transition-colors h-full">
                 <h3 className="font-serif text-xl font-medium mb-2">{item.title}</h3>
                 <p className="text-muted text-sm">{item.description}</p>
               </div>
@@ -165,11 +158,11 @@ export function WhoShouldUse() {
           ))}
         </div>
         <p className="text-center text-muted text-sm mt-10">
-          From local retailers to national brands — retail branding works for every industry.
+          From local launches to national rollouts — retail branding promotion works across every industry.
         </p>
         <div className="text-center mt-6">
           <Link href="/industries" className="inline-flex items-center gap-2 text-sm border-b border-foreground pb-1">
-            View all industries <ArrowUpRight size={14} />
+            See how we promote your brand <ArrowUpRight size={14} />
           </Link>
         </div>
       </div>
@@ -272,7 +265,7 @@ export function AgencyIntro() {
 
 export function MediaComparison() {
   return (
-    <section className="py-24 md:py-32 bg-surface">
+    <section className="py-24 md:py-32 bg-white">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <SectionHeading label="Comparison" title="Retail Branding Compared with Other Media" description="Retail branding offers immersive visibility with pan-India coverage at highly competitive costs." align="center" />
         <div className="overflow-x-auto">
@@ -306,7 +299,7 @@ export function MediaComparison() {
 
 export function BlogInsights() {
   return (
-    <section id="blog" className="py-24 md:py-32 bg-white">
+    <section id="blog" className="py-24 md:py-32 bg-surface">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeading label="Blog" title="Insights & perspectives." description="Explore deep dives on retail branding, store audits, and designing high-recall in-store environments." align="center" />
         <div className="grid md:grid-cols-3 gap-8">

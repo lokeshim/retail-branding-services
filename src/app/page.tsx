@@ -2,51 +2,58 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustedStats } from "@/components/sections/TrustedStats";
-import { ClientMarquee } from "@/components/ClientMarquee";
 import { HighImpact } from "@/components/sections/HighImpact";
-import { LeadCTA } from "@/components/sections/LeadCTA";
+import { Services } from "@/components/Services";
 import { FormatsSection } from "@/components/sections/FormatsSection";
 import { MarketCoverage } from "@/components/sections/MarketCoverage";
-import { Services } from "@/components/Services";
 import { ActiveCities } from "@/components/sections/ActiveCities";
 import {
   WhyChoose,
-  CostOverview,
-  StorePlanning,
   WhoShouldUse,
   ExecutionProcess,
+  StorePlanning,
   CaseStudiesSection,
-  AgencyIntro,
   MediaComparison,
   BlogInsights,
   NationalFAQ,
 } from "@/components/sections/MoreSections";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { LeadCTA } from "@/components/sections/LeadCTA";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
+
+      {/* Hook & credibility */}
       <HeroSection />
-      {/* <TrustedStats /> */}
-      {/* <ClientMarquee /> */}
+      <TrustedStats />
       <HighImpact />
-      <LeadCTA />
+
+      {/* What we offer */}
+      <Services />
       <FormatsSection />
-      <ActiveCities />
-      {/* <MarketCoverage /> */}
-      {/* <Services /> */}
+
+      {/* Why us & process */}
       <WhyChoose />
-      <CostOverview />
-      <StorePlanning />
       <WhoShouldUse />
       <ExecutionProcess />
+
+      {/* Coverage & planning */}
+      <MarketCoverage />
+      <ActiveCities />
+      <StorePlanning />
+
+      {/* Proof & comparison */}
       <CaseStudiesSection />
-      <AgencyIntro />
+      <TestimonialsSection />
       <MediaComparison />
-      {/* <TestimonialsSection /> */}
+
+      {/* Convert & resources */}
+      <LeadCTA />
       <BlogInsights />
       <NationalFAQ />
+
       <Footer />
     </main>
   );

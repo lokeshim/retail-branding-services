@@ -9,7 +9,11 @@ export const metadata: Metadata = tierMarketPage.metadata;
 export default function RetailBrandingTierCitiesPage() {
   return (
     <PageLayout>
-      <MarketLanding content={tierMarketPage} heroImage={images.process} />
+      <MarketLanding
+        content={tierMarketPage}
+        heroImage={images.tierCoverage}
+        formatsBgImage={images.tierCoverage}
+      />
     </PageLayout>
   );
 }

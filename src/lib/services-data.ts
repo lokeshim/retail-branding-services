@@ -1,16 +1,17 @@
 import {
   Store,
-  Layout,
-  ShoppingBag,
+  Building2,
   Megaphone,
+  ShoppingCart,
   Palette,
-  TrendingUp,
+  MapPinned,
   type LucideIcon,
 } from "lucide-react";
 
 export interface Service {
   id: string;
   icon: LucideIcon;
+  type: string;
   title: string;
   description: string;
   features: string[];
@@ -18,52 +19,58 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "store-identity",
+    id: "store-facade",
     icon: Store,
-    title: "Store Identity Design",
+    type: "Store Facade Branding",
+    title: "Street-level visibility that pulls footfall",
     description:
-      "Complete retail brand identity — logo, signage, colour palette, and visual language tailored for your store.",
-    features: ["Logo & brand mark", "Colour palette", "Typography system", "Brand guidelines"],
+      "Exterior signage, facade graphics and storefront branding built for high-traffic retail corridors and daily shopper recall.",
+    features: ["Facade signage", "Window branding", "Exterior graphics", "Night visibility"],
   },
   {
-    id: "storefront",
-    icon: Layout,
-    title: "Storefront & Interior Branding",
+    id: "mall-highstreet",
+    icon: Building2,
+    type: "Mall & High-Street Branding",
+    title: "Premium presence in malls and high streets",
     description:
-      "Eye-catching storefront design and in-store environmental graphics that drive footfall and enhance shopping experience.",
-    features: ["Facade design", "Interior graphics", "Wayfinding signage", "Lighting guidance"],
-  },
-  {
-    id: "packaging",
-    icon: ShoppingBag,
-    title: "Packaging & Collateral",
-    description:
-      "Shopping bags, product labels, price tags, and promotional materials that reinforce your retail brand.",
-    features: ["Shopping bags", "Product labels", "Price tags", "Business cards"],
+      "Branding formats tailored for mall atriums, anchor stores and high-street frontages where competition for attention is highest.",
+    features: ["Mall rollouts", "High-street facades", "Atrium branding", "Flagship zones"],
   },
   {
     id: "in-store-promotion",
     icon: Megaphone,
-    title: "In-Store Promotion",
+    type: "In-Store Promotion Branding",
+    title: "Campaigns that convert at the shelf",
     description:
-      "Seasonal campaigns, sale banners, POS displays, and promotional signage that boost sales at the point of purchase.",
-    features: ["Sale banners", "POS displays", "Seasonal campaigns", "Digital screens"],
+      "Offer-led signage, seasonal campaigns and promotional branding placed where shoppers are closest to purchase.",
+    features: ["Sale campaigns", "Festive branding", "Offer signage", "Launch promotions"],
+  },
+  {
+    id: "shelf-aisle",
+    icon: ShoppingCart,
+    type: "Shelf & Aisle Branding",
+    title: "Shelf visibility across retail networks",
+    description:
+      "Aisle branding, shelf talkers and category signage that keeps your brand visible through the full in-store journey.",
+    features: ["Shelf talkers", "Aisle branding", "Category blocks", "End-cap displays"],
   },
   {
     id: "visual-merchandising",
     icon: Palette,
-    title: "Visual Merchandising",
+    type: "Visual Merchandising Branding",
+    title: "Displays that guide attention and intent",
     description:
-      "Strategic product display, window dressing, and shelf branding that maximises product visibility and appeal.",
-    features: ["Window displays", "Shelf branding", "Product staging", "Display fixtures"],
+      "Window dressing, product staging and VM-led branding that turns browsing into buying across multi-store formats.",
+    features: ["Window displays", "Product staging", "Fixture branding", "Display zones"],
   },
   {
-    id: "brand-strategy",
-    icon: TrendingUp,
-    title: "Retail Brand Strategy",
+    id: "pan-india-rollout",
+    icon: MapPinned,
+    type: "Pan-India Rollout Branding",
+    title: "One team from metro malls to tier-city stores",
     description:
-      "Market positioning, competitor analysis, and brand roadmap for retail businesses entering or expanding.",
-    features: ["Market research", "Competitor analysis", "Brand positioning", "Growth roadmap"],
+      "Multi-city retail branding with verified store networks, consistent execution and photo proof on every location.",
+    features: ["Metro rollouts", "Tier-city scale", "On-ground teams", "Photo proof"],
   },
 ];
 

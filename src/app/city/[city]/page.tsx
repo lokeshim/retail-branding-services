@@ -14,9 +14,9 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import {
   StorePlanning,
   ExecutionProcess,
-  WhyChoose,
 } from "@/components/sections/MoreSections";
 import { images } from "@/lib/images";
+import { getCityImage } from "@/lib/city-images";
 import { services } from "@/lib/services-data";
 import { getCityBySlug, getAllCitySlugs, type City } from "@/lib/cities";
 import { cityBenefits, getActiveCityMeta, getCityStats } from "@/lib/city-landing";
@@ -58,28 +58,28 @@ function CityAvailability({ city }: { city: City }) {
   if (!active) return null;
 
   return (
-    <section className="py-16 bg-brand text-white">
+    <section className="py-16 bg-white border-y border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
           <div>
-            <p className="text-white/70 text-xs uppercase tracking-widest mb-2">Active market</p>
-            <h2 className="font-serif text-3xl font-medium">{active.name}</h2>
-            <p className="text-white/80 text-sm mt-2">{active.region}</p>
+            <p className="text-muted text-xs uppercase tracking-widest mb-2">Active market</p>
+            <h2 className="font-serif text-3xl font-medium text-foreground">{active.name}</h2>
+            <p className="text-muted text-sm mt-2">{active.region}</p>
           </div>
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <p className="font-serif text-2xl">{active.stores}</p>
-              <p className="text-white/70 text-xs mt-1">Stores ready</p>
+              <p className="font-serif text-2xl text-foreground">{active.stores}</p>
+              <p className="text-muted text-xs mt-1">Stores ready</p>
             </div>
             <div>
-              <p className="font-serif text-2xl">{active.golive}</p>
-              <p className="text-white/70 text-xs mt-1">Avg. go-live</p>
+              <p className="font-serif text-2xl text-foreground">{active.golive}</p>
+              <p className="text-muted text-xs mt-1">Avg. go-live</p>
             </div>
           </div>
           <div className="md:text-right">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand text-sm font-medium hover:bg-white/90 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-colors"
             >
               Book your {city.name} slot <ArrowUpRight size={14} />
             </Link>
@@ -96,6 +96,8 @@ export default async function CityLandingPage({ params }: PageProps) {
   if (!city) notFound();
 
   const stats = getCityStats(city);
+  const cityImage = getCityImage(city.slug);
+  const heroImage = cityImage?.src ?? images.store;
 
   return (
     <PageLayout>
@@ -104,17 +106,19 @@ export default async function CityLandingPage({ params }: PageProps) {
           label={`Retail Branding · ${city.name}`}
           title={`Retail branding in ${city.name}, planned with proof`}
           description={`${city.tagline}. Plan, price and execute store branding across ${city.name} with verified networks, clear timelines and photo proof on every location.`}
-          image={images.store}
-          imageAlt={`Retail branding in ${city.name}`}
+          image={heroImage}
+          imageAlt={cityImage?.alt ?? `Retail branding in ${city.name}`}
         />
 
-        <section className="py-16 bg-foreground text-white">
+        <section className="py-16 bg-section-dark-bg border-b border-section-dark-border">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="font-serif text-3xl md:text-4xl font-medium">{stat.value}</div>
-                  <div className="text-white/70 text-sm mt-2">{stat.label}</div>
+                  <div className="font-serif text-3xl md:text-4xl font-medium text-section-dark-text">
+                    {stat.value}
+                  </div>
+                  <div className="text-section-dark-muted text-sm mt-2">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -123,7 +127,7 @@ export default async function CityLandingPage({ params }: PageProps) {
 
         <CityAvailability city={city} />
 
-        <section className="py-24 md:py-32 bg-white">
+        <section className="py-24 md:py-32 bg-surface">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <AnimatedReveal>
@@ -144,8 +148,8 @@ export default async function CityLandingPage({ params }: PageProps) {
               <AnimatedReveal delay={0.2}>
                 <div className="relative aspect-[4/3] overflow-hidden border border-border shadow-lg">
                   <Image
-                    src={images.store}
-                    alt={`Retail branding in ${city.name}`}
+                    src={heroImage}
+                    alt={cityImage?.alt ?? `Retail branding in ${city.name}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -156,7 +160,7 @@ export default async function CityLandingPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="py-16 bg-surface border-y border-border">
+        <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <SectionHeading
               label="Areas We Serve"
@@ -168,7 +172,7 @@ export default async function CityLandingPage({ params }: PageProps) {
               {city.areas.map((area) => (
                 <span
                   key={area}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-border text-sm text-foreground"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-surface border border-border text-sm text-foreground"
                 >
                   <MapPin size={14} className="text-brand" />
                   {area}
@@ -178,7 +182,7 @@ export default async function CityLandingPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="py-24 md:py-32 bg-white">
+        <section className="py-24 md:py-32 bg-surface">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <SectionHeading
               label="Services"
@@ -189,7 +193,7 @@ export default async function CityLandingPage({ params }: PageProps) {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, i) => (
                 <AnimatedReveal key={service.id} delay={i * 0.06}>
-                  <div className="border border-border p-8 h-full hover:border-brand/30 hover:shadow-md transition-all">
+                  <div className="bg-white border border-border p-8 h-full hover:border-brand/30 hover:shadow-md transition-all">
                     <service.icon size={24} className="mb-4 text-brand" strokeWidth={1.5} />
                     <h3 className="font-serif text-xl mb-3">{service.title}</h3>
                     <p className="text-muted text-sm leading-relaxed">{service.description}</p>
@@ -205,10 +209,9 @@ export default async function CityLandingPage({ params }: PageProps) {
           </div>
         </section>
 
-        <FormatsSection />
+        <FormatsSection background="white" />
         <StorePlanning />
         <ExecutionProcess />
-        <WhyChoose />
         <TestimonialsSection />
 
         <BgSection image={images.cta} imageAlt={`FAQ retail branding ${city.name}`} overlay="brand">

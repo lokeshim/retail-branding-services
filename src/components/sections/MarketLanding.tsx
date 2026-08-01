@@ -67,7 +67,15 @@ function MarketFaqs({ faqs }: { faqs: MarketPageContent["faqs"] }) {
   );
 }
 
-export function MarketLanding({ content, heroImage }: { content: MarketPageContent; heroImage: string }) {
+export function MarketLanding({
+  content,
+  heroImage,
+  formatsBgImage = images.store,
+}: {
+  content: MarketPageContent;
+  heroImage: string;
+  formatsBgImage?: string;
+}) {
   return (
     <main>
       <PageHero
@@ -163,19 +171,24 @@ export function MarketLanding({ content, heroImage }: { content: MarketPageConte
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <BgSection
+        image={formatsBgImage}
+        imageAlt={content.formats.title}
+        overlay="dark"
+      >
+        <div className="max-w-7xl mx-auto">
           <SectionHeading
             label="Formats"
             title={content.formats.title}
             description={content.formats.description}
             align="center"
+            light
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.formats.items.map((format, i) => (
               <AnimatedReveal key={format.title} delay={i * 0.05}>
-                <article className="border border-border p-8 h-full hover:shadow-md transition-shadow">
-                  <h3 className="font-serif text-xl font-medium mb-3">{format.title}</h3>
+                <article className="bg-white border border-border p-8 h-full hover:shadow-lg transition-shadow">
+                  <h3 className="font-serif text-xl font-medium mb-3 text-foreground">{format.title}</h3>
                   <p className="text-muted text-sm leading-relaxed mb-4">{format.description}</p>
                   <div className="pt-4 border-t border-border">
                     <p className="text-xs uppercase tracking-wider text-muted mb-1">Best suited for</p>
@@ -187,7 +200,7 @@ export function MarketLanding({ content, heroImage }: { content: MarketPageConte
             ))}
           </div>
         </div>
-      </section>
+      </BgSection>
 
       <section className="py-24 md:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

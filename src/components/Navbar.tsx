@@ -11,7 +11,7 @@ import { NavDropdown } from "@/components/NavDropdown";
 
 const mainLinks = [
   { label: "Formats", href: "/#formats" },
-  { label: "Rates", href: "/#pricing" },
+  { label: "Contact", href: "/#contact" },
   { label: "Case studies", href: "/#case-studies" },
   { label: "Guides", href: "/#blog" },
 ];

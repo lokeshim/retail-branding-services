@@ -12,16 +12,16 @@ import { LeadCTA } from "@/components/sections/LeadCTA";
 export const metadata: Metadata = {
   title: "Services | Retail Branding Agency",
   description:
-    "Complete retail branding services — store identity, storefront design, packaging, in-store promotion, visual merchandising, and brand strategy.",
+    "Types of retail branding — store facade, mall & high-street, in-store promotion, shelf & aisle, visual merchandising, and pan-India rollout.",
 };
 
 const serviceImages: Record<string, string> = {
-  "store-identity": images.store,
-  storefront: images.hero,
-  packaging: images.about,
+  "store-facade": images.store,
+  "mall-highstreet": images.cta,
   "in-store-promotion": images.process,
-  "visual-merchandising": images.cta,
-  "brand-strategy": images.holdings,
+  "shelf-aisle": images.hero,
+  "visual-merchandising": images.about,
+  "pan-india-rollout": images.holdings,
 };
 
 export default function ServicesPage() {
@@ -29,9 +29,9 @@ export default function ServicesPage() {
     <PageLayout>
       <main>
         <PageHero
-          label="Our Services"
-          title="Retail branding services"
-          description="End-to-end branding solutions for retail stores — from identity design to in-store promotion and multi-location rollouts."
+          label="Types of Retail Branding"
+          title="Complete retail branding solutions"
+          description="Every format is built for a specific retail objective — from facade recall to shelf conversion and pan-India rollout."
           image={images.store}
           imageAlt="Retail branding services"
         />
@@ -47,8 +47,8 @@ export default function ServicesPage() {
                   }`}
                 >
                   <div className={i % 2 === 1 ? "lg:[direction:ltr]" : ""}>
-                    <span className="text-muted text-xs tracking-[0.3em] uppercase">
-                      Service {String(i + 1).padStart(2, "0")}
+                    <span className="text-muted text-xs tracking-[0.2em] uppercase">
+                      {service.type}
                     </span>
                     <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mt-3 mb-4">
                       {service.title}

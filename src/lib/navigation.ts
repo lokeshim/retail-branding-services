@@ -2,12 +2,12 @@ import { getCityHref } from "./cities";
 
 export const serviceNavItems = [
   { label: "All Services", href: "/services" },
-  { label: "Store Identity", href: "/services#store-identity" },
-  { label: "Storefront Branding", href: "/services#storefront" },
-  { label: "Packaging & Collateral", href: "/services#packaging" },
+  { label: "Store Facade Branding", href: "/services#store-facade" },
+  { label: "Mall & High-Street", href: "/services#mall-highstreet" },
   { label: "In-Store Promotion", href: "/services#in-store-promotion" },
+  { label: "Shelf & Aisle Branding", href: "/services#shelf-aisle" },
   { label: "Visual Merchandising", href: "/services#visual-merchandising" },
-  { label: "Brand Strategy", href: "/services#brand-strategy" },
+  { label: "Pan-India Rollout", href: "/services#pan-india-rollout" },
 ];
 
 export const mainNavLinks = [

@@ -14,6 +14,10 @@
   --brand-dark: #000000;
   --brand-light: var(--surface-elevated);
   --accent-orange: #ffffff;
+  --section-dark-bg: var(--foreground);
+  --section-dark-text: var(--background);
+  --section-dark-muted: color-mix(in srgb, var(--section-dark-text) 68%, transparent);
+  --section-dark-border: color-mix(in srgb, var(--section-dark-text) 14%, transparent);
 }
 
 @theme inline {
@@ -30,6 +34,10 @@
   --color-brand-dark: var(--brand-dark);
   --color-brand-light: var(--brand-light);
   --color-accent-orange: var(--accent-orange);
+  --color-section-dark-bg: var(--section-dark-bg);
+  --color-section-dark-text: var(--section-dark-text);
+  --color-section-dark-muted: var(--section-dark-muted);
+  --color-section-dark-border: var(--section-dark-border);
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-cormorant);
 }

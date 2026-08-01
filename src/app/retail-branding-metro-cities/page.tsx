@@ -9,7 +9,11 @@ export const metadata: Metadata = metroMarketPage.metadata;
 export default function RetailBrandingMetroCitiesPage() {
   return (
     <PageLayout>
-      <MarketLanding content={metroMarketPage} heroImage={images.store} />
+      <MarketLanding
+        content={metroMarketPage}
+        heroImage={images.metroCoverage}
+        formatsBgImage={images.metroCoverage}
+      />
     </PageLayout>
   );
 }
