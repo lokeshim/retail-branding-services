@@ -22,6 +22,15 @@ export function HighImpact() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <AnimatedReveal>
+            <div className="relative aspect-[4/5] overflow-hidden border border-border">
+              <Image src={images.store} alt="Retail branding impact" fill className="object-cover" sizes="50vw" />
+              <div className="absolute bottom-0 left-0 right-0 bg-foreground/80 text-white p-6">
+                <p className="text-xs uppercase tracking-wider text-white/70">Concept Direction</p>
+                <p className="font-serif text-xl mt-1">Immersive retail. Measurable discipline.</p>
+              </div>
+            </div>
+          </AnimatedReveal>
+          <AnimatedReveal delay={0.2}>
             <SectionHeading
               label="Concept Direction"
               title="High Impact. Daily Visibility."
@@ -42,15 +51,6 @@ export function HighImpact() {
                   <div className="text-muted text-xs mt-1">{s.label}</div>
                 </div>
               ))}
-            </div>
-          </AnimatedReveal>
-          <AnimatedReveal delay={0.2}>
-            <div className="relative aspect-[4/5] overflow-hidden border border-border">
-              <Image src={images.store} alt="Retail branding impact" fill className="object-cover" sizes="50vw" />
-              <div className="absolute bottom-0 left-0 right-0 bg-foreground/80 text-white p-6">
-                <p className="text-xs uppercase tracking-wider text-white/70">Concept Direction</p>
-                <p className="font-serif text-xl mt-1">Immersive retail. Measurable discipline.</p>
-              </div>
             </div>
           </AnimatedReveal>
         </div>

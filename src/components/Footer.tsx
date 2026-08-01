@@ -66,7 +66,9 @@ export function Footer() {
               Let&apos;s Elevate Your Retail Brand Experience
             </h4>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Partner with India&apos;s most trusted retail branding consultant to build memorable, high-performing retail spaces.
+              Partner with India&apos;s most trusted{" "}
+              <em className="italic text-white/80">retail branding consultant</em>{" "}
+              to build memorable, high-performing retail spaces.
             </p>
             <BrandingLeadForm variant="footer" />
           </div>

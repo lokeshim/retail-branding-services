@@ -18,11 +18,11 @@ export function ClientMarquee() {
 
   return (
     <section className="py-16 border-y border-border bg-white overflow-hidden">
-      <AnimatedReveal>
+      {/* <AnimatedReveal>
         <p className="text-center text-foreground/70 text-xs font-medium tracking-[0.3em] uppercase mb-8">
           Trusted by brands across India
         </p>
-      </AnimatedReveal>
+      </AnimatedReveal> */}
       <div className="relative flex overflow-hidden">
         <div className="animate-marquee flex gap-16 whitespace-nowrap">
           {doubled.map((client, i) => (

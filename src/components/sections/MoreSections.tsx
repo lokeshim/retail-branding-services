@@ -306,7 +306,7 @@ export function MediaComparison() {
 
 export function BlogInsights() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section id="blog" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeading label="Blog" title="Insights & perspectives." description="Explore deep dives on retail branding, store audits, and designing high-recall in-store environments." align="center" />
         <div className="grid md:grid-cols-3 gap-8">

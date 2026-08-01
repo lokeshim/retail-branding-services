@@ -4,8 +4,9 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustedStats } from "@/components/sections/TrustedStats";
 import { ClientMarquee } from "@/components/ClientMarquee";
 import { HighImpact } from "@/components/sections/HighImpact";
-import { MarketCoverage } from "@/components/sections/MarketCoverage";
+import { LeadCTA } from "@/components/sections/LeadCTA";
 import { FormatsSection } from "@/components/sections/FormatsSection";
+import { MarketCoverage } from "@/components/sections/MarketCoverage";
 import { Services } from "@/components/Services";
 import { ActiveCities } from "@/components/sections/ActiveCities";
 import {
@@ -21,20 +22,20 @@ import {
   NationalFAQ,
 } from "@/components/sections/MoreSections";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { LeadCTA } from "@/components/sections/LeadCTA";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <HeroSection />
-      <TrustedStats />
-      <ClientMarquee />
+      {/* <TrustedStats /> */}
+      {/* <ClientMarquee /> */}
       <HighImpact />
-      <MarketCoverage />
+      <LeadCTA />
       <FormatsSection />
-      <Services />
       <ActiveCities />
+      {/* <MarketCoverage /> */}
+      {/* <Services /> */}
       <WhyChoose />
       <CostOverview />
       <StorePlanning />
@@ -43,9 +44,8 @@ export default function Home() {
       <CaseStudiesSection />
       <AgencyIntro />
       <MediaComparison />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <BlogInsights />
-      <LeadCTA />
       <NationalFAQ />
       <Footer />
     </main>
