@@ -6,14 +6,24 @@ import { Plus, Minus } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { faqs } from "@/lib/faqs";
 
-export function FAQAccordion({ items = faqs }: { items?: typeof faqs }) {
+export function FAQAccordion({
+  items = faqs,
+  variant = "on-image",
+}: {
+  items?: typeof faqs;
+  variant?: "on-image" | "on-surface";
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const cardClass =
+    variant === "on-image"
+      ? "bg-white/95 backdrop-blur-sm border border-white/20 shadow-sm"
+      : "bg-white border border-border shadow-sm";
 
   return (
     <div className="space-y-4 max-w-3xl mx-auto">
       {items.map((faq, i) => (
         <AnimatedReveal key={faq.q} delay={i * 0.05}>
-          <div className="bg-white/95 backdrop-blur-sm border border-white/20 shadow-sm">
+          <div className={cardClass}>
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
               className="w-full flex items-center justify-between gap-4 p-6 md:p-8 text-left"

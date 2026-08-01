@@ -11,15 +11,19 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { FormatsSection } from "@/components/sections/FormatsSection";
 import { LeadCTA } from "@/components/sections/LeadCTA";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import {
-  StorePlanning,
-  ExecutionProcess,
-} from "@/components/sections/MoreSections";
+import { StorePlanning } from "@/components/sections/MoreSections";
 import { images } from "@/lib/images";
 import { getCityImage } from "@/lib/city-images";
 import { services } from "@/lib/services-data";
 import { getCityBySlug, getAllCitySlugs, type City } from "@/lib/cities";
 import { cityBenefits, getActiveCityMeta, getCityStats } from "@/lib/city-landing";
+import {
+  SECTION_ALT,
+  SECTION_BASE,
+  SECTION_DARK,
+  sectionPadding,
+  sectionPaddingCompact,
+} from "@/lib/section-rhythm";
 import { CheckCircle, MapPin, ArrowUpRight } from "lucide-react";
 
 interface PageProps {
@@ -58,7 +62,7 @@ function CityAvailability({ city }: { city: City }) {
   if (!active) return null;
 
   return (
-    <section className="py-16 bg-white border-y border-border">
+    <section className={`${sectionPaddingCompact} ${SECTION_BASE} border-y border-border`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
           <div>
@@ -102,6 +106,7 @@ export default async function CityLandingPage({ params }: PageProps) {
   return (
     <PageLayout>
       <main>
+        {/* Hero — image */}
         <PageHero
           label={`Retail Branding · ${city.name}`}
           title={`Retail branding in ${city.name}, planned with proof`}
@@ -110,7 +115,8 @@ export default async function CityLandingPage({ params }: PageProps) {
           imageAlt={cityImage?.alt ?? `Retail branding in ${city.name}`}
         />
 
-        <section className="py-16 bg-section-dark-bg border-b border-section-dark-border">
+        {/* Stats strip */}
+        <section className={`py-16 ${SECTION_DARK}`}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat) => (
@@ -125,9 +131,11 @@ export default async function CityLandingPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* 1 — base */}
         <CityAvailability city={city} />
 
-        <section className="py-24 md:py-32 bg-surface">
+        {/* 2 — alt */}
+        <section className={`${sectionPadding} ${SECTION_ALT}`}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <AnimatedReveal>
@@ -160,29 +168,34 @@ export default async function CityLandingPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <SectionHeading
-              label="Areas We Serve"
-              title={`Retail branding across ${city.name}`}
-              description={`High-traffic retail corridors and neighbourhood catchments in ${city.state}.`}
-              align="center"
-            />
-            <div className="flex flex-wrap justify-center gap-3">
-              {city.areas.map((area) => (
-                <span
-                  key={area}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-surface border border-border text-sm text-foreground"
-                >
-                  <MapPin size={14} className="text-brand" />
-                  {area}
-                </span>
-              ))}
-            </div>
+        {/* 3 — image */}
+        <BgSection
+          image={heroImage}
+          imageAlt={`Retail branding areas in ${city.name}`}
+          overlay="dark"
+        >
+          <SectionHeading
+            label="Areas We Serve"
+            title={`Retail branding across ${city.name}`}
+            description={`High-traffic retail corridors and neighbourhood catchments in ${city.state}.`}
+            align="center"
+            light
+          />
+          <div className="flex flex-wrap justify-center gap-3 mt-10">
+            {city.areas.map((area) => (
+              <span
+                key={area}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/95 border border-white/20 text-sm text-foreground"
+              >
+                <MapPin size={14} className="text-brand" />
+                {area}
+              </span>
+            ))}
           </div>
-        </section>
+        </BgSection>
 
-        <section className="py-24 md:py-32 bg-surface">
+        {/* 4 — alt */}
+        <section className={`${sectionPadding} ${SECTION_ALT}`}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <SectionHeading
               label="Services"
@@ -195,6 +208,7 @@ export default async function CityLandingPage({ params }: PageProps) {
                 <AnimatedReveal key={service.id} delay={i * 0.06}>
                   <div className="bg-white border border-border p-8 h-full hover:border-brand/30 hover:shadow-md transition-all">
                     <service.icon size={24} className="mb-4 text-brand" strokeWidth={1.5} />
+                    <p className="text-xs uppercase tracking-wider text-muted mb-2">{service.type}</p>
                     <h3 className="font-serif text-xl mb-3">{service.title}</h3>
                     <p className="text-muted text-sm leading-relaxed">{service.description}</p>
                   </div>
@@ -209,24 +223,49 @@ export default async function CityLandingPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* 5 — base */}
         <FormatsSection background="white" />
+
+        {/* 6 — image */}
         <StorePlanning />
-        <ExecutionProcess />
+
+        {/* 7 — alt */}
+        <section className={`${sectionPadding} ${SECTION_ALT}`}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              <SectionHeading
+                label="FAQ"
+                title={`Retail branding in ${city.name} — FAQs`}
+                description={`Common questions from brands planning rollouts in ${city.name} and ${city.state}.`}
+                align="center"
+              />
+              <FAQAccordion variant="on-surface" />
+            </div>
+          </div>
+        </section>
+
+        {/* 8 — image */}
         <TestimonialsSection />
 
-        <BgSection image={images.cta} imageAlt={`FAQ retail branding ${city.name}`} overlay="brand">
-          <div className="max-w-3xl mx-auto">
-            <SectionHeading
-              label="FAQ"
-              title={`Retail branding in ${city.name} — FAQs`}
-              description={`Common questions from brands planning rollouts in ${city.name} and ${city.state}.`}
-              align="center"
-              light
-            />
-            <FAQAccordion />
+        {/* 9 — alt */}
+        <section className={`${sectionPadding} ${SECTION_ALT}`}>
+          <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4">
+              Plan your {city.name} retail branding rollout
+            </h2>
+            <p className="text-muted mb-8">
+              Share your store count and campaign objective — get a customized plan with timelines and estimates within 24 hours.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-colors"
+            >
+              Get {city.name} estimate <ArrowUpRight size={14} />
+            </Link>
           </div>
-        </BgSection>
+        </section>
 
+        {/* 10 — image */}
         <LeadCTA />
       </main>
     </PageLayout>

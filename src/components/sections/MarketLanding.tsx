@@ -11,6 +11,12 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { BgSection } from "@/components/ui/BgSection";
 import { LeadCTA } from "@/components/sections/LeadCTA";
 import { images } from "@/lib/images";
+import {
+  SECTION_ALT,
+  SECTION_BASE,
+  SECTION_DARK,
+  sectionPadding,
+} from "@/lib/section-rhythm";
 import { CheckCircle, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
@@ -19,7 +25,7 @@ function MarketCtaButton({ label }: { label: string }) {
   return (
     <button
       onClick={openContactPopup}
-      className="px-8 py-3.5 bg-brand text-white text-sm font-medium hover:bg-brand-dark transition-colors"
+      className="px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-colors"
     >
       {label}
     </button>
@@ -78,6 +84,7 @@ export function MarketLanding({
 }) {
   return (
     <main>
+      {/* Hero — image */}
       <PageHero
         label={content.hero.label}
         title={content.hero.title}
@@ -86,20 +93,24 @@ export function MarketLanding({
         imageAlt={content.hero.title}
       />
 
-      <section className="py-16 bg-foreground text-white">
+      {/* Stats strip */}
+      <section className={`py-16 ${SECTION_DARK}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {content.stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="font-serif text-3xl md:text-4xl font-medium">{stat.value}</div>
-                <div className="text-white/70 text-sm mt-2">{stat.label}</div>
+                <div className="font-serif text-3xl md:text-4xl font-medium text-section-dark-text">
+                  {stat.value}
+                </div>
+                <div className="text-section-dark-muted text-sm mt-2">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-white">
+      {/* 1 — base */}
+      <section className={`${sectionPadding} ${SECTION_BASE}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
           <AnimatedReveal>
             <SectionHeading label="Overview" title={content.intro.title} />
@@ -127,9 +138,9 @@ export function MarketLanding({
             </div>
           </AnimatedReveal>
           <AnimatedReveal delay={0.15}>
-            <div className="relative aspect-[4/3] overflow-hidden border border-border">
+            <div className="relative aspect-[4/3] overflow-hidden border border-border shadow-lg">
               <Image
-                src={images.store}
+                src={heroImage}
                 alt={content.hero.title}
                 fill
                 className="object-cover"
@@ -140,7 +151,8 @@ export function MarketLanding({
         </div>
       </section>
 
-      <section className="py-24 bg-surface border-y border-border">
+      {/* 2 — alt */}
+      <section className={`${sectionPadding} ${SECTION_ALT}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
             label="Coverage"
@@ -171,11 +183,8 @@ export function MarketLanding({
         </div>
       </section>
 
-      <BgSection
-        image={formatsBgImage}
-        imageAlt={content.formats.title}
-        overlay="dark"
-      >
+      {/* 3 — image */}
+      <BgSection image={formatsBgImage} imageAlt={content.formats.title} overlay="dark">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             label="Formats"
@@ -202,7 +211,8 @@ export function MarketLanding({
         </div>
       </BgSection>
 
-      <section className="py-24 md:py-32 bg-surface">
+      {/* 4 — alt */}
+      <section className={`${sectionPadding} ${SECTION_ALT}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading label="Why" title={content.why.title} align="center" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -218,6 +228,7 @@ export function MarketLanding({
         </div>
       </section>
 
+      {/* 5 — image */}
       <BgSection image={images.process} imageAlt={content.process.title} overlay="brand">
         <SectionHeading label="Process" title={content.process.title} align="center" light />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
@@ -233,13 +244,14 @@ export function MarketLanding({
         </div>
       </BgSection>
 
-      <section className="py-24 md:py-32 bg-white">
+      {/* 6 — alt */}
+      <section className={`${sectionPadding} ${SECTION_ALT}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading label="Case Studies" title={content.caseStudies.title} align="center" />
           <div className="grid md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto">
             {content.caseStudies.items.map((cs, i) => (
               <AnimatedReveal key={cs.title} delay={i * 0.1}>
-                <article className="border border-border p-8 h-full">
+                <article className="bg-white border border-border p-8 h-full hover:shadow-md transition-shadow">
                   <p className="text-brand text-xs uppercase tracking-wider mb-3">{cs.tag}</p>
                   <h3 className="font-serif text-2xl font-medium mb-4">{cs.title}</h3>
                   <p className="text-sm font-medium border-t border-border pt-4">{cs.outcome}</p>
@@ -250,6 +262,7 @@ export function MarketLanding({
         </div>
       </section>
 
+      {/* 7 — image */}
       <BgSection image={images.cta} imageAlt="FAQ" overlay="brand">
         <SectionHeading label="FAQ" title="Common questions" align="center" light />
         <div className="mt-10">
@@ -257,7 +270,8 @@ export function MarketLanding({
         </div>
       </BgSection>
 
-      <section className="py-24 md:py-32 bg-surface">
+      {/* 8 — alt */}
+      <section className={`${sectionPadding} ${SECTION_ALT}`}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4">{content.cta.title}</h2>
           <p className="text-muted mb-8">{content.cta.description}</p>
@@ -265,6 +279,7 @@ export function MarketLanding({
         </div>
       </section>
 
+      {/* 9 — image */}
       <LeadCTA />
     </main>
   );
