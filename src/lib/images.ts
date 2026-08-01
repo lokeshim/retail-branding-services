@@ -21,18 +21,18 @@ export const images = {
 
 export const heroSlides = [
   {
-    src: images.hero,
-    alt: "Modern corporate workspace",
-    label: "Corporate Branding",
-  },
-  {
-    src: images.airport,
-    alt: "Airport terminal branding",
-    label: "Airport Branding",
-  },
-  {
     src: images.store,
     alt: "Retail store branding",
-    label: "Retail Branding",
+    label: "Store Identity",
+  },
+  {
+    src: images.hero,
+    alt: "Modern retail workspace",
+    label: "Visual Merchandising",
+  },
+  {
+    src: images.process,
+    alt: "Retail branding team at work",
+    label: "In-Store Promotion",
   },
 ] as const;

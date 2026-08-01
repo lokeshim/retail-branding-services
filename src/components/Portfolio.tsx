@@ -8,35 +8,35 @@ import { images } from "@/lib/images";
 
 const projects = [
   {
-    title: "SkyPort International Terminal",
-    category: "Airport Branding",
-    description:
-      "Complete terminal wayfinding, lounge branding, and passenger experience design for a major international airport.",
-    image: images.airport,
-    year: "2025",
-  },
-  {
     title: "Metro Retail Flagship Store",
-    category: "Store Promotion",
+    category: "Store Identity",
     description:
       "End-to-end retail branding including storefront, in-store graphics, and seasonal promotional campaigns.",
     image: images.store,
     year: "2025",
   },
   {
-    title: "Green Valley Adventure Park",
-    category: "Park & Leisure",
+    title: "Urban Mart Multi-Location Rollout",
+    category: "Franchise Branding",
     description:
-      "Theme park identity, attraction signage, and visitor experience branding across 200+ acres.",
-    image: images.park,
+      "Consistent brand identity rolled out across 12 franchise locations with unified signage and in-store graphics.",
+    image: images.hero,
+    year: "2025",
+  },
+  {
+    title: "Luxe Fashion Boutique",
+    category: "Visual Merchandising",
+    description:
+      "Window display strategy, interior environmental graphics, and seasonal campaign branding for a premium fashion retailer.",
+    image: images.about,
     year: "2024",
   },
   {
-    title: "Apex Holdings Corporate Rebrand",
-    category: "Holdings & Corporate",
+    title: "FreshMart Supermarket Chain",
+    category: "In-Store Promotion",
     description:
-      "Multi-subsidiary brand architecture and corporate identity for a diversified holding company.",
-    image: images.holdings,
+      "POS displays, aisle branding, packaging design, and promotional signage across a 5-store supermarket chain.",
+    image: images.process,
     year: "2024",
   },
 ];
@@ -47,8 +47,8 @@ export function Portfolio() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeading
           label="Featured Work"
-          title="Brands we've promoted"
-          description="A selection of brand promotion projects across our four core verticals — airports, stores, parks, and holdings."
+          title="Retail brands we've built"
+          description="A selection of retail branding projects — from single-store identities to multi-location rollouts across Bangalore."
         />
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -92,7 +92,7 @@ export function Portfolio() {
             href="#contact"
             className="inline-flex items-center gap-2 text-sm tracking-wide text-foreground border-b border-foreground pb-1 hover:text-muted hover:border-muted transition-colors"
           >
-            View All Projects
+            Start Your Retail Brand Project
             <ArrowUpRight size={14} />
           </a>
         </AnimatedReveal>

@@ -8,27 +8,27 @@ import { SectionBackground } from "./ui/SectionBackground";
 const steps = [
   {
     number: "01",
-    title: "Research",
+    title: "Audit",
     description:
-      "We study your market, audience, and competitive landscape to build a data-driven brand strategy.",
+      "We analyse your store, competitors, and target customers in Bangalore to understand your brand opportunity.",
   },
   {
     number: "02",
     title: "Strategy",
     description:
-      "Brand positioning, messaging, and promotion roadmap tailored to your business vertical.",
+      "Brand positioning and retail promotion roadmap tailored to your category and business goals.",
   },
   {
     number: "03",
     title: "Design",
     description:
-      "Visual identity, promotional materials, and environmental branding crafted for maximum impact.",
+      "Store identity, signage, interiors, packaging, and promotional materials crafted for maximum impact.",
   },
   {
     number: "04",
-    title: "Deploy",
+    title: "Launch",
     description:
-      "Rollout across all touchpoints — from airport terminals to retail floors to corporate offices.",
+      "Rollout across your store(s) with ongoing brand support and seasonal campaign updates.",
   },
 ];
 
@@ -36,16 +36,16 @@ export function Process() {
   return (
     <section id="process" className="relative py-24 md:py-32 overflow-hidden">
       <SectionBackground
-        src={images.process}
-        alt="Team collaboration in office"
+        src={images.store}
+        alt="Retail store branding process"
         overlay="dark"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeading
           label="Our Process"
-          title="How we promote your brand"
-          description="A structured four-step approach refined across hundreds of projects in airports, stores, parks, and holdings."
+          title="How we brand your retail store"
+          description="A structured four-step approach refined across 120+ retail branding projects in Bangalore and across India."
           light
         />
 

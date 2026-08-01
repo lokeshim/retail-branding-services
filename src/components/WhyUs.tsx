@@ -9,27 +9,27 @@ import { images } from "@/lib/images";
 const reasons = [
   {
     icon: Target,
-    title: "Industry Expertise",
+    title: "Retail Specialists",
     description:
-      "Deep specialization in airport, retail, park, and holdings branding — we understand your sector's unique challenges.",
+      "Deep expertise in retail branding — fashion, F&B, electronics, supermarkets, and franchise outlets across Bangalore.",
   },
   {
     icon: Users,
     title: "Dedicated Teams",
     description:
-      "Sector-specific strategists and designers assigned to every project for focused, expert delivery.",
+      "Retail strategists and designers assigned to every project for focused, expert delivery from audit to launch.",
   },
   {
     icon: BarChart3,
     title: "Measurable Results",
     description:
-      "Brand campaigns backed by KPIs — footfall, recognition, engagement, and revenue impact tracking.",
+      "Campaigns backed by KPIs — footfall increase, sales uplift, brand recall, and customer retention tracking.",
   },
   {
     icon: Shield,
     title: "Trusted Partner",
     description:
-      "12+ years serving enterprise clients across India with consistent quality and on-time delivery.",
+      "120+ retail stores branded across India with 98% client satisfaction and consistent on-time delivery.",
   },
 ];
 
@@ -51,8 +51,8 @@ export function WhyUs() {
           <div>
             <SectionHeading
               label="Why Aurelia"
-              title="Your partner in brand promotion"
-              description="We don't just create logos — we build complete brand promotion ecosystems that drive visibility, trust, and business growth across every touchpoint."
+              title="Your retail branding partner in Bangalore"
+              description="We don't just design logos — we build complete retail brand experiences from storefront to checkout that drive footfall, loyalty, and sales."
             />
 
             <div className="grid sm:grid-cols-2 gap-8">

@@ -107,17 +107,19 @@ export function ContactForm({
       </div>
       {showBusinessType && (
         <div>
-          <label className={labelClass}>Business Type</label>
+          <label className={labelClass}>Store Type</label>
           <select
             name="business_type"
             defaultValue={defaultBusinessType}
             className={inputClass}
           >
-            <option value="">Select your vertical</option>
-            <option value="airport">Airport</option>
-            <option value="store">Retail Store</option>
-            <option value="park">Park & Leisure</option>
-            <option value="holdings">Holdings & Corporate</option>
+            <option value="">Select your store type</option>
+            <option value="fashion">Fashion & Apparel</option>
+            <option value="fnb">Food & Beverage</option>
+            <option value="electronics">Electronics</option>
+            <option value="supermarket">Supermarket & Grocery</option>
+            <option value="specialty">Specialty Store</option>
+            <option value="franchise">Franchise / Multi-location</option>
           </select>
         </div>
       )}

@@ -1,108 +1,82 @@
 import Link from "next/link";
-import { Share2, Globe, Mail } from "lucide-react";
-
-const socialIcons = [Share2, Globe, Mail];
-
-const footerLinks = {
-  Verticals: [
-    { label: "Airport Branding", href: "/#services" },
-    { label: "Retail Branding", href: "/retail-branding-in-bangalore" },
-    { label: "Park & Leisure", href: "/#services" },
-    { label: "Holdings & Corporate", href: "/#services" },
-  ],
-  Company: [
-    { label: "About Us", href: "/about" },
-    { label: "Our Work", href: "/#work" },
-    { label: "Careers", href: "/careers" },
-    { label: "Blog", href: "/blog" },
-  ],
-  Connect: [
-    { label: "Contact", href: "/contact" },
-    { label: "Case Studies", href: "/#work" },
-    { label: "Partnerships", href: "/contact" },
-    { label: "Get a Quote", href: "/contact" },
-  ],
-};
+import { Logo } from "@/components/Logo";
+import { BrandingLeadForm } from "@/components/BrandingLeadForm";
+import { activeCities } from "@/lib/site-content";
+import { getCityHref } from "@/lib/cities";
+const socialLinks = [
+  { label: "Facebook", href: "https://facebook.com" },
+  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "Instagram", href: "https://instagram.com" },
+];
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-foreground text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-20">
-        <div className="flex flex-col items-center text-center lg:grid lg:grid-cols-5 lg:gap-12 lg:text-left lg:items-start">
-          <div className="lg:col-span-2 flex flex-col items-center lg:items-start mb-10 lg:mb-0">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <span className="w-8 h-8 border-2 border-white flex items-center justify-center">
-                <span className="text-white text-xs font-serif font-semibold">
-                  A
-                </span>
-              </span>
-              <span className="font-serif text-xl tracking-wide">
-                Aurelia<span className="text-white/60">.</span>
-              </span>
-            </Link>
-            <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-              Professional brand promotion for airports, retail stores, parks,
-              and corporate holdings — building brands that drive business
-              growth.
-            </p>
-            <div className="flex gap-4 mt-6 justify-center lg:justify-start">
-              {socialIcons.map((Icon, i) => (
+        <div className="grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-3">
+            <Logo variant="footer" className="mb-6" />
+            <p className="text-white/50 text-xs uppercase tracking-widest mb-2">IM SOLUTIONS</p>
+            <p className="text-white/70 text-sm italic mb-6">Your Gain Our Success</p>
+            <ul className="space-y-2 text-sm text-white/70 mb-6">
+              <li><a href="tel:+919876543210" className="hover:text-white">+91 98765 43210</a></li>
+              <li><a href="mailto:hello@retailbranding.co" className="hover:text-white">hello@retailbranding.co</a></li>
+            </ul>
+            <div className="flex gap-3">
+              {socialLinks.map(({ label, href }) => (
                 <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white transition-all"
-                  aria-label="Social link"
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="px-3 py-2 border border-white/20 text-xs text-white/60 hover:text-white hover:border-white/40 transition-colors"
                 >
-                  <Icon size={16} />
+                  {label}
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full lg:contents">
-            {Object.entries(footerLinks).map(([title, links]) => (
-              <div
-                key={title}
-                className="flex flex-col items-center lg:items-start"
-              >
-                <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">
-                  {title}
-                </h4>
-                <ul className="space-y-3">
-                  {links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="text-white/60 text-sm hover:text-white transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="lg:col-span-2">
+            <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">Quick Link</h4>
+            <ul className="space-y-3 text-sm text-white/60">
+              <li><Link href="/" className="hover:text-white">Home</Link></li>
+              <li><Link href="/services" className="hover:text-white">Services</Link></li>
+              <li><Link href="/industries" className="hover:text-white">Industries</Link></li>
+              <li><Link href="/retail-branding-metro-cities" className="hover:text-white">Retail Branding Metro Cities</Link></li>
+              <li><Link href="/retail-branding-tier-cities" className="hover:text-white">Retail Branding Tier 2 & 3 Cities</Link></li>
+              <li><Link href="/blog" className="hover:text-white">Blog & Insights</Link></li>
+              <li><Link href="/case-studies" className="hover:text-white">Case Studies</Link></li>
+              <li><Link href="/faq" className="hover:text-white">FAQs</Link></li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-3">
+            <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">Cities</h4>
+            <ul className="space-y-3 text-sm text-white/60">
+              {activeCities.map((c) => (
+                <li key={c.slug}><Link href={getCityHref(c.slug)} className="hover:text-white">{c.name}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-4">
+            <h4 className="font-serif text-xl text-white mb-2">
+              Let&apos;s Elevate Your Retail Brand Experience
+            </h4>
+            <p className="text-white/60 text-sm leading-relaxed mb-6">
+              Partner with India&apos;s most trusted retail branding consultant to build memorable, high-performing retail spaces.
+            </p>
+            <BrandingLeadForm variant="footer" />
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 pt-8 border-t border-white/10 flex flex-col items-center text-center gap-4 lg:flex-row lg:justify-between lg:text-left">
-          <p className="text-white/40 text-xs">
-            &copy; {new Date().getFullYear()} Aurelia Brand Studio. All rights
-            reserved.
-          </p>
-          <div className="flex gap-6 text-xs text-white/40 justify-center lg:justify-end">
-            <Link
-              href="/privacy-policy"
-              className="hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms-and-conditions"
-              className="hover:text-white transition-colors"
-            >
-              Terms & Conditions
-            </Link>
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/40">
+          <p>&copy; {new Date().getFullYear()} Retail Branding Agency. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-white">Terms & Conditions</Link>
           </div>
         </div>
       </div>

@@ -10,9 +10,9 @@ import { images } from "@/lib/images";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog | Aurelia Brand Studio",
+  title: "Blog | Aurelia Brand Studio — Retail Branding Insights",
   description:
-    "Insights on branding, retail promotion, airport marketing, and corporate identity from Aurelia Brand Studio.",
+    "Expert insights on retail branding, storefront design, visual merchandising, and in-store promotion from Aurelia Brand Studio.",
 };
 
 export default function BlogPage() {
@@ -21,10 +21,10 @@ export default function BlogPage() {
       <main>
         <PageHero
           label="Blog"
-          title="Insights & ideas on branding"
-          description="Expert perspectives on brand promotion for airports, retail stores, parks, and corporate holdings."
+          title="Retail branding insights & ideas"
+          description="Expert perspectives on store identity, storefront design, visual merchandising, and in-store promotion for Bangalore retailers."
           image={images.cta}
-          imageAlt="Branding insights blog"
+          imageAlt="Retail branding insights blog"
         />
 
         <section className="py-24 md:py-32 bg-white">

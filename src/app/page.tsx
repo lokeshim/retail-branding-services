@@ -1,26 +1,52 @@
 import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { ClientMarquee } from "@/components/ClientMarquee";
-import { Services } from "@/components/Services";
-import { Process } from "@/components/Process";
-import { Portfolio } from "@/components/Portfolio";
-import { WhyUs } from "@/components/WhyUs";
-import { Testimonials } from "@/components/Testimonials";
-import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { TrustedStats } from "@/components/sections/TrustedStats";
+import { ClientMarquee } from "@/components/ClientMarquee";
+import { HighImpact } from "@/components/sections/HighImpact";
+import { MarketCoverage } from "@/components/sections/MarketCoverage";
+import { FormatsSection } from "@/components/sections/FormatsSection";
+import { Services } from "@/components/Services";
+import { ActiveCities } from "@/components/sections/ActiveCities";
+import {
+  WhyChoose,
+  CostOverview,
+  StorePlanning,
+  WhoShouldUse,
+  ExecutionProcess,
+  CaseStudiesSection,
+  AgencyIntro,
+  MediaComparison,
+  BlogInsights,
+  NationalFAQ,
+} from "@/components/sections/MoreSections";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { LeadCTA } from "@/components/sections/LeadCTA";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
-      <Hero />
+      <HeroSection />
+      <TrustedStats />
       <ClientMarquee />
+      <HighImpact />
+      <MarketCoverage />
+      <FormatsSection />
       <Services />
-      <Process />
-      <Portfolio />
-      <WhyUs />
-      <Testimonials />
-      <CTA />
+      <ActiveCities />
+      <WhyChoose />
+      <CostOverview />
+      <StorePlanning />
+      <WhoShouldUse />
+      <ExecutionProcess />
+      <CaseStudiesSection />
+      <AgencyIntro />
+      <MediaComparison />
+      <TestimonialsSection />
+      <BlogInsights />
+      <LeadCTA />
+      <NationalFAQ />
       <Footer />
     </main>
   );

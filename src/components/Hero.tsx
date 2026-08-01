@@ -53,19 +53,19 @@ export function Hero() {
           className="max-w-3xl mx-auto md:mx-0 text-center md:text-left"
         >
           <span className="inline-block text-white/90 text-[10px] sm:text-xs font-medium tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] uppercase mb-6 md:mb-8">
-            Brand Promotion · Airport · Store · Park · Holdings
+            Retail Branding · Store Identity · Visual Merchandising
           </span>
 
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tight text-white drop-shadow-md">
-            Elevating brands across
+            Transform your store into
             <br />
-            <span className="font-medium">every business vertical</span>
+            <span className="font-medium">a brand customers love</span>
           </h1>
 
           <p className="mt-6 md:mt-8 text-white/90 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mx-auto md:mx-0">
-            Strategic brand promotion for airports, retail stores, parks, and
-            corporate holdings — helping businesses build recognition, trust,
-            and lasting customer connections.
+            Expert retail identity, storefront design, in-store promotion, and
+            visual merchandising for Bangalore businesses — helping stores drive
+            footfall, build loyalty, and stand out in a competitive market.
           </p>
 
           <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4">
@@ -73,7 +73,7 @@ export function Hero() {
               href="#contact"
               className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-foreground text-sm font-medium tracking-wide hover:bg-white/90 transition-colors duration-300"
             >
-              Discuss Your Project
+              Get Free Consultation
               <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform"
@@ -95,10 +95,10 @@ export function Hero() {
           className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6"
         >
           {[
-            { value: "50+", label: "Airport Projects" },
-            { value: "120+", label: "Retail Stores" },
-            { value: "35+", label: "Parks & Venues" },
-            { value: "80+", label: "Holdings Brands" },
+            { value: "120+", label: "Retail Stores Branded" },
+            { value: "2x", label: "Avg. Footfall Increase" },
+            { value: "15+", label: "Retail Categories" },
+            { value: "98%", label: "Client Satisfaction" },
           ].map((stat) => (
             <div
               key={stat.label}

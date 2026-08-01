@@ -1,59 +1,42 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatedReveal } from "./ui/AnimatedReveal";
 import { SectionHeading } from "./ui/SectionHeading";
-import { Plane, Store, Trees, Building2 } from "lucide-react";
 import { images } from "@/lib/images";
+import { services } from "@/lib/services-data";
 
-const verticals = [
-  {
-    icon: Plane,
-    title: "Airport Branding",
-    description:
-      "Terminal signage, lounge branding, wayfinding systems, and promotional campaigns that enhance passenger experience and brand visibility.",
-    image: images.airport,
-  },
-  {
-    icon: Store,
-    title: "Retail Store Promotion",
-    description:
-      "In-store branding, visual merchandising, storefront identity, and promotional materials that drive footfall and sales.",
-    image: images.store,
-  },
-  {
-    icon: Trees,
-    title: "Park & Leisure Branding",
-    description:
-      "Theme park identity, recreational venue branding, event promotion, and environmental graphics for leisure destinations.",
-    image: images.park,
-  },
-  {
-    icon: Building2,
-    title: "Holdings & Corporate",
-    description:
-      "Corporate identity for holding companies, subsidiary branding, investor communications, and multi-brand portfolio management.",
-    image: images.holdings,
-  },
-];
+const serviceImages: Record<string, string> = {
+  "store-identity": images.store,
+  storefront: images.hero,
+  packaging: images.about,
+  "in-store-promotion": images.process,
+  "visual-merchandising": images.cta,
+  "brand-strategy": images.holdings,
+};
 
 export function Services() {
   return (
     <section id="services" className="py-24 md:py-32 bg-surface">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeading
-          label="Our Verticals"
-          title="Brand promotion tailored to your industry"
-          description="We specialize in four core business sectors, delivering targeted branding solutions that resonate with your audience and drive measurable results."
+          label="Our Services"
+          title="Complete retail branding solutions"
+          description="From store identity to pan-India rollout — everything your brand needs for high-impact in-store presence."
         />
 
         <div className="grid md:grid-cols-2 gap-8">
-          {verticals.map((item, i) => (
-            <AnimatedReveal key={item.title} delay={i * 0.1}>
-              <article className="group bg-white border border-border overflow-hidden hover:shadow-lg transition-shadow duration-500">
+          {services.map((item, i) => (
+            <AnimatedReveal key={item.id} delay={i * 0.1}>
+              <article
+                id={item.id}
+                className="group bg-white border border-border overflow-hidden hover:shadow-lg transition-shadow duration-500 scroll-mt-28"
+              >
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <Image
-                    src={item.image}
+                    src={serviceImages[item.id] ?? images.store}
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -65,7 +48,9 @@ export function Services() {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="font-serif text-2xl font-medium text-foreground mb-3">{item.title}</h3>
+                  <h3 className="font-serif text-2xl font-medium text-foreground mb-3">
+                    {item.title}
+                  </h3>
                   <p className="text-muted leading-relaxed text-sm">
                     {item.description}
                   </p>
@@ -74,6 +59,11 @@ export function Services() {
               </article>
             </AnimatedReveal>
           ))}
+        </div>
+        <div className="text-center mt-12">
+          <Link href="/services" className="inline-flex items-center gap-2 text-sm border-b border-foreground pb-1">
+            View all services <ArrowUpRight size={14} />
+          </Link>
         </div>
       </div>
     </section>

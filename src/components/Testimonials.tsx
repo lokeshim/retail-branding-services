@@ -10,39 +10,39 @@ import { SectionBackground } from "./ui/SectionBackground";
 const testimonials = [
   {
     quote:
-      "Aurelia transformed our airport lounge into a premium branded experience. Passenger satisfaction scores increased by 35% within the first quarter.",
-    author: "Vikram Singh",
-    role: "Director, SkyPort International",
-  },
-  {
-    quote:
       "Their retail store branding strategy helped us achieve 2x footfall across our flagship locations. Professional, strategic, and results-driven.",
     author: "Meera Kapoor",
     role: "CEO, Metro Retail Group",
   },
   {
     quote:
-      "From park signage to corporate holdings identity — Aurelia managed our entire brand portfolio with exceptional consistency and creativity.",
-    author: "Rajesh Nair",
-    role: "MD, Apex Holdings Ltd.",
-  },
-  {
-    quote:
-      "The park branding project exceeded our expectations. Visitor engagement rose significantly and our seasonal campaigns feel cohesive and premium.",
-    author: "Sneha Iyer",
-    role: "Marketing Head, Green Valley Parks",
-  },
-  {
-    quote:
-      "Aurelia understood our holdings structure and delivered a brand system that works across all subsidiaries. Truly professional.",
-    author: "Arjun Mehta",
-    role: "CEO, Pinnacle Corp.",
-  },
-  {
-    quote:
       "Our storefront rebranding was a game-changer. Footfall doubled within three months and customer feedback has been overwhelmingly positive.",
     author: "Priya Sharma",
     role: "Founder, Urban Mart Stores",
+  },
+  {
+    quote:
+      "Aurelia rolled out our brand identity across 12 franchise locations seamlessly. Every store now feels cohesive and premium.",
+    author: "Rahul Verma",
+    role: "Director, FreshMart Supermarkets",
+  },
+  {
+    quote:
+      "The visual merchandising and in-store promotion work transformed our boutique. Sales increased 40% in the first quarter after launch.",
+    author: "Ananya Reddy",
+    role: "Owner, Luxe Fashion Boutique",
+  },
+  {
+    quote:
+      "From packaging to POS displays, every touchpoint now tells our brand story. Customers notice the difference immediately.",
+    author: "Karthik Menon",
+    role: "Founder, Brew & Bean Café",
+  },
+  {
+    quote:
+      "We needed a brand that stands out in a crowded mall. Aurelia delivered a storefront and interior identity that draws people in every day.",
+    author: "Divya Nair",
+    role: "Marketing Head, StyleHub Retail",
   },
 ];
 

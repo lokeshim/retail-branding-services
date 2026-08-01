@@ -3,14 +3,14 @@
 import { AnimatedReveal } from "./ui/AnimatedReveal";
 
 const clients = [
-  "SkyPort International",
   "Metro Retail Group",
-  "Green Valley Parks",
-  "Apex Holdings Ltd.",
-  "Terminal One Lounge",
   "Urban Mart Stores",
-  "Sunrise Theme Park",
-  "Pinnacle Corp.",
+  "FreshMart Supermarkets",
+  "Luxe Fashion Boutique",
+  "StyleHub Retail",
+  "Brew & Bean Café",
+  "GreenLeaf Organics",
+  "TechZone Electronics",
 ];
 
 export function ClientMarquee() {
@@ -20,7 +20,7 @@ export function ClientMarquee() {
     <section className="py-16 border-y border-border bg-white overflow-hidden">
       <AnimatedReveal>
         <p className="text-center text-foreground/70 text-xs font-medium tracking-[0.3em] uppercase mb-8">
-          Trusted across airports, stores, parks & holdings
+          Trusted by brands across India
         </p>
       </AnimatedReveal>
       <div className="relative flex overflow-hidden">

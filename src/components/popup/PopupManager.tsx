@@ -47,7 +47,7 @@ function FloatingContactButton() {
   return (
     <button
       onClick={openContactPopup}
-      className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-foreground text-white shadow-lg hover:bg-foreground/90 transition-all flex items-center justify-center"
+      className="fixed bottom-20 right-6 z-40 w-14 h-14 bg-brand text-white shadow-lg hover:bg-brand-dark transition-all flex items-center justify-center"
       aria-label="Open contact form"
     >
       <MessageCircle size={24} />

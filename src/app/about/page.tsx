@@ -6,11 +6,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { images } from "@/lib/images";
 import { Target, Eye, Heart, Award } from "lucide-react";
+import { LeadCTA } from "@/components/sections/LeadCTA";
 
 export const metadata: Metadata = {
-  title: "About Us | Aurelia Brand Studio",
+  title: "About Us | Retail Branding Agency — IM Solutions",
   description:
-    "Learn about Aurelia Brand Studio — Bangalore's trusted branding partner for airports, retail stores, parks, and corporate holdings.",
+    "Learn about Retail Branding Agency — India's trusted retail branding desk. 500+ campaigns across metros and tier cities since 2013.",
 };
 
 const values = [
@@ -18,33 +19,33 @@ const values = [
     icon: Target,
     title: "Purpose-Driven",
     description:
-      "Every brand we build serves a clear business purpose — driving recognition, trust, and growth.",
+      "Every retail brand we build serves a clear business purpose — driving footfall, loyalty, and sales growth.",
   },
   {
     icon: Eye,
     title: "Vision-Led",
     description:
-      "We see beyond the brief to craft brands that stand the test of time and market shifts.",
+      "We see beyond the brief to craft store identities that stand out in Bangalore's competitive retail market.",
   },
   {
     icon: Heart,
     title: "Client-First",
     description:
-      "Your success is our success. We partner deeply with every client from strategy to launch.",
+      "Your store's success is our success. We partner deeply from brand audit to launch and beyond.",
   },
   {
     icon: Award,
     title: "Excellence",
     description:
-      "World-class design standards applied to every project, regardless of scale or industry.",
+      "World-class design standards applied to every project — from single boutiques to multi-location rollouts.",
   },
 ];
 
 const team = [
   { name: "Ananya Krishnan", role: "Founder & CEO", image: images.about },
-  { name: "Rohit Desai", role: "Creative Director", image: images.process },
-  { name: "Sneha Patel", role: "Brand Strategist", image: images.testimonials },
-  { name: "Arjun Mehta", role: "Head of Operations", image: images.holdings },
+  { name: "Sneha Patel", role: "Retail Design Lead", image: images.process },
+  { name: "Meera Kapoor", role: "Brand Strategist", image: images.testimonials },
+  { name: "Rohit Desai", role: "Creative Director", image: images.store },
 ];
 
 export default function AboutPage() {
@@ -52,11 +53,11 @@ export default function AboutPage() {
     <PageLayout>
       <main>
         <PageHero
-          label="About Aurelia"
-          title="Building brands that move businesses forward"
-          description="Since 2014, we've helped airports, retail stores, parks, and holding companies across India build brands that customers remember and trust."
+          label="About Us"
+          title="India's retail branding specialists"
+          description="Since 2013, we've helped brands across India plan, execute and verify store branding — from metro malls to tier-2 neighbourhood retail."
           image={images.about}
-          imageAlt="Aurelia team at work"
+          imageAlt="Retail branding agency team"
         />
 
         <section className="py-24 md:py-32 bg-white">
@@ -65,22 +66,20 @@ export default function AboutPage() {
               <AnimatedReveal>
                 <SectionHeading
                   label="Our Story"
-                  title="12 years of brand excellence"
-                  description="Aurelia was founded with a simple belief — every business deserves a brand that truly represents its ambition. From a small studio in Bangalore, we've grown into one of India's most trusted branding agencies, serving clients across airports, retail, leisure, and corporate sectors."
+                  title="12+ years of retail brand excellence"
+                  description="Retail Branding Agency was built with a simple belief — every store deserves branding planned with proof. From Bengaluru, we've grown into a pan-India desk for metro and tier-city rollouts."
                 />
                 <p className="text-muted leading-relaxed mt-6">
-                  Today, our team of strategists, designers, and brand managers
-                  work with 280+ clients nationwide, delivering brand promotion
-                  solutions that create measurable business impact.
+                  Today, our team of retail strategists, designers, and on-ground coordinators work with fashion chains, FMCG brands, electronics retailers, and franchise networks — delivering campaigns with photo proof on every location.
                 </p>
               </AnimatedReveal>
               <AnimatedReveal delay={0.2}>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { value: "280+", label: "Clients Served" },
+                    { value: "500+", label: "Campaigns Delivered" },
+                    { value: "50+", label: "Cities Covered" },
+                    { value: "100M+", label: "Monthly Impressions" },
                     { value: "12+", label: "Years Experience" },
-                    { value: "40+", label: "Awards Won" },
-                    { value: "4", label: "Industry Verticals" },
                   ].map((stat) => (
                     <div
                       key={stat.label}
@@ -149,6 +148,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <LeadCTA />
       </main>
     </PageLayout>
   );

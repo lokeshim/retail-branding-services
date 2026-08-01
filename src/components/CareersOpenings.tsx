@@ -19,7 +19,7 @@ const openings = [
   },
   {
     title: "Retail Branding Specialist",
-    department: "Retail Vertical",
+    department: "Retail Branding",
     location: "Bangalore",
     type: "Full-time",
   },

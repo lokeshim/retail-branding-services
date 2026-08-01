@@ -9,6 +9,11 @@
   --surface: #f8f9fa;
   --surface-elevated: #f1f3f5;
   --border: rgba(0, 0, 0, 0.1);
+  --card: #ffffff;
+  --brand: var(--accent);
+  --brand-dark: #000000;
+  --brand-light: var(--surface-elevated);
+  --accent-orange: #ffffff;
 }
 
 @theme inline {
@@ -20,6 +25,11 @@
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
   --color-border: var(--border);
+  --color-card: var(--card);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-light: var(--brand-light);
+  --color-accent-orange: var(--accent-orange);
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-cormorant);
 }
@@ -37,6 +47,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 ::selection {

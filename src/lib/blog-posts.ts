@@ -57,10 +57,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "airport-branding-trends",
-    title: "5 Airport Branding Trends Shaping Passenger Experience",
+    title: "5 Retail Store Design Trends for 2026",
     excerpt:
-      "From digital wayfinding to lounge identity — the latest trends in airport brand promotion across India.",
-    category: "Airport",
+      "From experiential layouts to sustainable materials — the latest trends shaping retail store branding in Bangalore.",
+    category: "Retail",
     date: "Mar 8, 2026",
     readTime: "5 min read",
     author: "Vikram Singh",
@@ -106,10 +106,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "holdings-corporate-identity",
-    title: "Building a Corporate Identity for Multi-Brand Holdings",
+    title: "Franchise Branding: Consistency Across Multiple Stores",
     excerpt:
-      "How holding companies can maintain brand consistency while allowing subsidiary flexibility.",
-    category: "Holdings",
+      "How retail chains maintain brand consistency while allowing location-specific flexibility across franchise outlets.",
+    category: "Retail",
     date: "Feb 28, 2026",
     readTime: "7 min read",
     author: "Rajesh Nair",
@@ -146,10 +146,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "theme-park-branding",
-    title: "Theme Park Branding: Creating Memorable Visitor Experiences",
+    title: "Mall Store Branding: Standing Out in Shared Spaces",
     excerpt:
-      "Environmental graphics, attraction identity, and promotional strategy for leisure destinations.",
-    category: "Park & Leisure",
+      "Signage, storefront design, and promotional strategy for retail stores inside Bangalore malls.",
+    category: "Retail",
     date: "Feb 20, 2026",
     readTime: "6 min read",
     author: "Ananya Reddy",
@@ -183,10 +183,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "roi-brand-promotion",
-    title: "The ROI of Professional Brand Promotion",
+    title: "The ROI of Professional Retail Branding",
     excerpt:
-      "Measuring the business impact of branding investments across retail, airport, and corporate sectors.",
-    category: "Strategy",
+      "Measuring the business impact of retail branding investments — footfall, sales, and customer loyalty.",
+    category: "Retail",
     date: "Feb 12, 2026",
     readTime: "8 min read",
     author: "Rohit Desai",

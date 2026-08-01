@@ -8,9 +8,9 @@ import { images } from "@/lib/images";
 import { MapPin, Clock, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Careers | Aurelia Brand Studio",
+  title: "Careers | Aurelia Brand Studio — Retail Branding Agency",
   description:
-    "Join Aurelia Brand Studio. Explore career opportunities in branding, design, strategy, and marketing in Bangalore.",
+    "Join Aurelia Brand Studio. Explore career opportunities in retail branding, design, visual merchandising, and strategy in Bangalore.",
 };
 
 const perks = [
@@ -40,8 +40,8 @@ export default function CareersPage() {
       <main>
         <PageHero
           label="Careers"
-          title="Build brands. Build your career."
-          description="Join a team that's shaping how airports, stores, parks, and holdings connect with their audiences across India."
+          title="Build retail brands. Build your career."
+          description="Join a team that's shaping how stores across Bangalore connect with customers — from storefront to checkout."
           image={images.process}
           imageAlt="Team collaboration at Aurelia"
         />
@@ -51,7 +51,7 @@ export default function CareersPage() {
             <SectionHeading
               label="Why Join Us"
               title="Grow with Aurelia"
-              description="We're always looking for talented people who are passionate about branding and want to make a real impact."
+              description="We're always looking for talented people who are passionate about retail branding and want to make a real impact."
             />
             <div className="grid md:grid-cols-3 gap-8">
               {perks.map((perk, i) => (

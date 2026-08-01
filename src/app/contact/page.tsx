@@ -7,9 +7,9 @@ import { images } from "@/lib/images";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Aurelia Brand Studio",
+  title: "Contact Us | Aurelia Brand Studio — Retail Branding Agency",
   description:
-    "Get in touch with Aurelia Brand Studio for brand promotion services. Offices in Bangalore. Call +91 98765 43210.",
+    "Get in touch with Aurelia for retail branding services in Bangalore. Store identity, storefront design, and in-store promotion. Call +91 98765 43210.",
 };
 
 const contactInfo = [
@@ -45,10 +45,10 @@ export default function ContactPage() {
       <main>
         <PageHero
           label="Contact"
-          title="Let's start your brand journey"
-          description="Tell us about your project. Whether it's an airport, store, park, or holdings company — we're here to help."
+          title="Let's brand your retail store"
+          description="Tell us about your store. Whether it's a new launch or a rebrand — we're here to help you stand out in Bangalore."
           image={images.cta}
-          imageAlt="Contact Aurelia Brand Studio"
+          imageAlt="Contact Aurelia retail branding agency"
         />
 
         <section className="py-16 md:py-32 bg-white">

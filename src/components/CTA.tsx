@@ -19,17 +19,16 @@ export function CTA() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           <AnimatedReveal className="text-center lg:text-left">
             <span className="text-white/90 text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase">
-              Get in Touch
+              Free Consultation
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] mt-4 text-white drop-shadow-sm">
-              Ready to promote
+              Ready to brand
               <br />
-              <span className="font-medium">your brand?</span>
+              <span className="font-medium">your retail store?</span>
             </h2>
             <p className="text-white/90 mt-4 md:mt-6 text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
-              Whether it&apos;s an airport, store, park, or holdings company —
-              tell us about your project and we&apos;ll craft a brand promotion
-              strategy that delivers results.
+              Tell us about your store and we&apos;ll share how we can help you
+              stand out in Bangalore — with a free 30-minute consultation.
             </p>
 
             <div className="mt-8 md:mt-10 space-y-4 w-full px-4 sm:px-0 max-w-md mx-auto lg:mx-0 lg:max-w-none">
