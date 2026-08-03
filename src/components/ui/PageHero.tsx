@@ -16,7 +16,7 @@ export function PageHero({
   imageAlt,
 }: PageHeroProps) {
   return (
-    <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section className="relative min-h-screen  pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden ">
       <SectionBackground src={image} alt={imageAlt} overlay="dark-heavy" priority />
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center md:text-left">
         <span className="inline-block text-white/90 text-xs font-medium tracking-[0.2em] md:tracking-[0.4em] uppercase mb-4 md:mb-6">

@@ -38,7 +38,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3 px-md-4">
             <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">Quick Link</h4>
             <ul className="space-y-3 text-sm text-white/60">
               <li><Link href="/" className="hover:text-white">Home</Link></li>
@@ -52,7 +52,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2 px-md-4">
             <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">Cities</h4>
             <ul className="space-y-3 text-sm text-white/60">
               {activeCities.map((c) => (

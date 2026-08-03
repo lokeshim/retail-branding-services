@@ -245,10 +245,10 @@ export default async function CityLandingPage({ params }: PageProps) {
         </section>
 
         {/* 8 — image */}
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
 
         {/* 9 — alt */}
-        <section className={`${sectionPadding} ${SECTION_ALT}`}>
+        {/* <section className={`${sectionPadding} ${SECTION_ALT}`}>
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4">
               Plan your {city.name} retail branding rollout
@@ -263,10 +263,10 @@ export default async function CityLandingPage({ params }: PageProps) {
               Get {city.name} estimate <ArrowUpRight size={14} />
             </Link>
           </div>
-        </section>
+        </section> */}
 
         {/* 10 — image */}
-        <LeadCTA />
+        {/* <LeadCTA /> */}
       </main>
     </PageLayout>
   );
