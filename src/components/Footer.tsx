@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="border-t border-border bg-foreground text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-20">
         <div className="grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 text-center lg:text-start">
             <Logo variant="footer" className="mb-6" />
             <p className="text-white/50 text-xs uppercase tracking-widest mb-2">IM SOLUTIONS</p>
             <p className="text-white/70 text-sm italic mb-6">Your Gain Our Success</p>
@@ -22,7 +22,7 @@ export function Footer() {
               <li><a href="tel:+919876543210" className="hover:text-white">+91 98765 43210</a></li>
               <li><a href="mailto:hello@retailbranding.co" className="hover:text-white">hello@retailbranding.co</a></li>
             </ul>
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center lg:justify-start">
               {socialLinks.map(({ label, href }) => (
                 <a
                   key={label}
@@ -38,7 +38,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="lg:col-span-3 px-md-4">
+          <div className="lg:col-span-3 px-md-4 text-center lg:text-start">
             <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">Quick Link</h4>
             <ul className="space-y-3 text-sm text-white/60">
               <li><Link href="/" className="hover:text-white">Home</Link></li>
@@ -52,7 +52,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-2 px-md-4">
+          <div className="lg:col-span-2 px-md-4 text-center lg:text-start">
             <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">Cities</h4>
             <ul className="space-y-3 text-sm text-white/60">
               {activeCities.map((c) => (
@@ -61,7 +61,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 text-center lg:text-left">
             <h4 className="font-serif text-xl text-white mb-2">
               Let&apos;s Elevate Your Retail Brand Experience
             </h4>
@@ -74,9 +74,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/40">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/40 text-center lg:text-left">
           <p>&copy; {new Date().getFullYear()} Retail Branding Agency. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 justify-center lg:justify-start">
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
             <Link href="/terms-and-conditions" className="hover:text-white">Terms & Conditions</Link>
           </div>
